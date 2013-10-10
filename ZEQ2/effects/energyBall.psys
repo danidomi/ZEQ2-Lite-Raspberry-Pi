@@ -1,0 +1,145 @@
+EnergyBallYellowFlash {
+
+	Emitter {
+		type point
+		radius 0
+		count 1
+
+		link auto
+
+		Particle {
+			model "skills/energyBall/kiFlashYellow.md3"
+			life 100
+			mass 1
+			scale 1
+			outScale 1.3 100
+			rgba ( 1 1 1 1 )
+			outRgba ( 1 1 1 0 ) 100
+		}
+	}
+
+	Emitter {
+		type point
+		radius 0
+		count 1
+
+		link auto
+
+		Particle {
+			map "EnergyBallShockwave"
+			life 100
+			mass 1
+			scale 10
+			outScale 15 100
+			rgba ( 1 1 1 1 )
+			outRgba ( 1 1 1 0 ) 100
+		}
+
+	}
+
+	Force {
+		type directional
+		area infinite
+		falloff 0
+		amount 0
+
+		link auto
+	}
+}
+
+EnergyBallBlueFlash {
+
+	Emitter {
+		type point
+		radius 0
+		count 1
+
+		link auto
+
+		Particle {
+			model "skills/energyBall/kiFlashBlue.md3"
+			life 100
+			mass 1
+			scale 1
+			outScale 1.3 100
+			rgba ( 1 1 1 1 )
+			outRgba ( 1 1 1 0 ) 100
+		}
+	}
+
+	Emitter {
+		type point
+		radius 0
+		count 1
+
+		link auto
+
+		Particle {
+			map "EnergyBallShockwave"
+			life 100
+			mass 1
+			scale 10
+			outScale 15 100
+			rgba ( 1 1 1 1 )
+			outRgba ( 1 1 1 0 ) 100
+		}
+
+	}
+
+	Force {
+		type directional
+		area infinite
+		falloff 0
+		amount 0
+
+		link auto
+	}
+}
+EnergyBallPinkFlash {
+
+	Emitter {
+		type point
+		radius 0
+		count 1
+
+		link auto
+
+		Particle {
+			model "skills/energyBall/kiFlashPink.md3"
+			life 100
+			mass 1
+			scale 1
+			outScale 1.3 100
+			rgba ( 1 1 1 1 )
+			outRgba ( 1 1 1 0 ) 100
+		}
+	}
+
+	Emitter {
+		type point
+		radius 0
+		count 1
+
+		link auto
+
+		Particle {
+			map "EnergyBallShockwave"
+			life 100
+			mass 1
+			scale 10
+			outScale 15 100
+			rgba ( 1 1 1 1 )
+			outRgba ( 1 1 1 0 ) 100
+		}
+
+	}
+
+	Force {
+		type directional
+		area infinite
+		falloff 0
+		amount 0
+
+		link auto
+	}
+}

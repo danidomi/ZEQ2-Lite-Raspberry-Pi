@@ -1,0 +1,16 @@
+gokuNormalHead,gokuHeadDamaged10
+gokuNormalHeadEyes,gokuHeadEyesDamaged10
+gokuHair,gokuHairDamaged10
+gokuPants,gokuPantsDamaged10
+gokuBoots,gokuBootsDamaged10
+gokuLowerAccessories,gokuLowerAccessoriesDamaged10
+gokuUpperBody,gokuUpperBodyDamaged10
+gokuUpperAccessories,gokuUpperAccessoriesDamaged10
+gokuUndershirt,gokuUndershirtDamaged10
+gokuShirt,gokuShirtDamaged10
+UpperSprite,LODSprite
+LowerSprite,LODSprite
+HeadSprite,LODSprite
+tag_torso,
+tag_head,
+tag_eyes,

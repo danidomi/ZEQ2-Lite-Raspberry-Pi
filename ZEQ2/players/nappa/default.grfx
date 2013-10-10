@@ -1,0 +1,74 @@
+import "baseAttack" = "skills/shared.grfx" "baseAttack"
+import "kiBlast" = "skills/shared.grfx" "kiBlast"
+import "kiStorm" = "skills/shared.grfx" "kiStorm"
+import "kiBall" = "skills/shared.grfx" "kiBall"
+import "kiBeam" = "skills/shared.grfx" "kiBeam"
+
+private "mouthblast" = "baseAttack"  {
+	Charge {
+		shader = "energyBallYellow"
+		size = [0 3] 
+		light = ( 1 1 0.5 ) [0 5]
+		timedFx = (
+			2 "skills/mouthBlast/MouthBlastCharge2"
+			6 "skills/mouthBlast/MouthBlastCharge"
+			)
+		loopParticles = "AuraDebris"
+	}
+	Flash {
+		model = "skills/energyBeam/beamHead2.md3"
+		skin = "skills/energyBeam/beamHead4.skin"
+		size = 1
+		light = ( 1 1 0.5 ) 20
+		soundFx = "skills/mouthBlast/MouthBlastFire"
+	}
+	Missile {
+		model = "skills/energyBeam/beamHead2.md3"
+		skin = "skills/energyBeam/beamHead4.skin"
+		size = 2
+		//spin = ( 0 0 10 )
+		light = ( 1 1 0.5 ) 20
+	}
+	Struggle {
+		model = "skills/energyBeam/beamstruggle.md3"
+		skin = "skills/energyBeam/beamstruggleYellow.skin"
+	}
+	Explosion {
+		skin = "effects/explosion/explosionYellow.skin"
+		size = 64
+		light = ( 1 1 0.5 ) 50
+		duration = 4000
+		smokeParticles = "ExplosionSmokeLarge"
+	}
+	Trail {
+		shader = "beams/beamYellow"
+		size = 25
+	}
+	Hud {
+		displayName = "Mouth Blast"
+		icon = "skills/finalFlash/icon.png"
+	}
+}
+
+private "earthstrike" = "baseAttack" {
+	Flash {
+		light = ( 1 1 1 ) 500
+		soundFx = "skills/fingerBlast/fingerBlastFire.ogg"
+	}
+	Explosion {
+		skin = "effects/explosion/explosionYellow.skin"
+		size = 200
+		light = ( 1 1 0.5 ) 50
+		duration = 1000
+		smokeParticles = "ExplosionSmokeLarge"
+	}
+	Hud {
+		displayName = "Energy Blast Force"
+		icon = "skills/energyBlast/icon.png"
+	}
+}
+
+Weapon 1 = "kiBlast" | "kiStorm"
+Weapon 2 = "kiBall" | "kiBeam"
+Weapon 3 = "mouthblast"
+Weapon 4 = "earthstrike"

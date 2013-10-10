@@ -1,0 +1,48 @@
+import "baseAttack" = "skills/shared.phys" "baseAttack"
+import "kiBlast" = "skills/shared.phys" "kiBlast"
+import "kiStorm" = "skills/shared.phys" "kiStorm"
+import "kiBall" = "skills/shared.phys" "kiBall"
+import "kiBeam" = "skills/shared.phys" "kiBeam"
+
+private "mouthblast" = "baseAttack" {
+	Physics {
+		type = "Beam"
+		speed = 7000
+		radius = 50 +50
+	}
+	Costs {
+		powerLevel = 40
+		chargeReadyPct = 50
+	}
+	Detonation {
+		damage = 100 +200
+		radius = 3000 +1000
+	}
+}
+
+private "earthstrike" = "baseAttack" {
+	Physics {
+		type = "Hitscan"
+	}
+	Costs {
+		cooldownTime = 1000
+		chargeReadyPct = 50
+	}
+	Detonation {
+		type = "Ki"
+		damage = 50 +50
+		radius = 5000 +5000
+		duration = 1000
+	}
+	Muzzle {
+		nrShots = 1
+	}
+	Trajectory {
+		type = "LineOfSight"
+	}
+}
+
+Weapon 1 = "kiBlast" | "kiStorm"
+Weapon 2 = "kiBall" | "kiBeam"
+Weapon 3 = "mouthblast"
+Weapon 4 = "earthstrike"

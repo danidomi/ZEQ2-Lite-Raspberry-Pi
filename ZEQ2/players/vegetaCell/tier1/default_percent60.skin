@@ -1,0 +1,11 @@
+vegHead,vegetaHeadDamaged60
+vegEyes,vegetaHeadEyesDamaged60
+vegUpper,vegetaBody2Damaged60
+vegHands,vegetaBody2Damaged60
+vegLower,vegetaLegs2Damaged60
+HeadSprite,LODSprite
+LowerSprite,LODSprite
+UpperSprite,LODSprite
+tag_head,
+tag_eyes,
+tag_torso,

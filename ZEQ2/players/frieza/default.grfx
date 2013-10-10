@@ -1,0 +1,276 @@
+import "baseAttack" = "skills/shared.grfx" "baseAttack"
+import "invisibleBlast" = "skills/shared.grfx" "invisibleblast"
+import "disk" = "skills/shared.grfx" "disk"
+import "kiBlast" = "skills/shared.grfx" "kiBlast"
+import "kiStorm" = "skills/shared.grfx" "kiStorm"
+import "kiBall" = "skills/shared.grfx" "kiBall"
+import "kiBeam" = "skills/shared.grfx" "kiBeam"
+
+private "pinkKiBlast" = "kiBlast" {
+	Charge {
+		shader = "energyBallPink"
+		light = ( 1 0.25 1 ) [0.1 2]
+	}
+	Flash { 
+		light = ( 1 0.25 1 ) 5
+		particles = "EnergyBallPinkFlash"
+	}
+	Missile {
+		shader = "energyBallPink"
+		light = ( 1 0.25 1 ) 5
+	}
+	Explosion {
+		model = "effects/explosion/explosion.md3"
+		skin = "effects/explosion/explosionPurple.skin"
+		light = ( 1 0.25 1 ) 5
+	}
+	Trail { 
+		shader = "trails/trailPink"
+	}
+	Hud {
+		icon = "skills/energyBlast/kiBlastPink.png"
+	}
+}
+
+private "pinkKiStorm" = "kiStorm" {
+	Flash { 
+		light = ( 1 0.25 1 ) 5
+		particles = "EnergyBallPinkFlash"
+	}
+	Missile {
+		shader = "energyBallPink"
+		light = ( 1 0.25 1 ) 5
+	}
+	Explosion {
+		model = "effects/explosion/explosion.md3"
+		skin = "effects/explosion/explosionPurple.skin"
+		light = ( 1 0.25 1 ) 5
+	}
+	Hud {
+		icon = "skills/energyBlast/kiBlastPink.png"
+	}
+	Trail { 
+		shader = "trails/trailPink"
+	}
+}
+
+private "pinkKiBall" = "kiBall" {
+	Charge {
+		shader = "energyBallPink"
+		light = ( 1 0.25 1 ) [0.1 2]
+	}
+	Flash { 
+		light = ( 1 0.25 1 ) 5
+		particles = "EnergyBallPinkFlash"
+	}
+	Missile {
+		shader = "energyBallPink"
+		light = ( 1 0.25 1 ) 5
+	}
+	Explosion {
+		model = "effects/explosion/explosion.md3"
+		skin = "effects/explosion/explosionPurple.skin"
+		light = ( 1 0.25 1 ) 5
+	}
+	Hud {
+		icon = "skills/energyBlast/kiBlastPink.png"
+	}
+	Hud {
+		icon = "skills/energyBall/kiBallPink.png"
+	}
+}
+
+private "pinkKiBeam" = "kiBeam" {
+	Charge {
+		shader = "energyBallPink"
+		light = (1 0.25 1 ) [0.1 5]
+	}
+	Flash {
+		model = "skills/energyBeam/beamflash.md3"
+		skin = "skills/energyBeam/beamflashPurple.skin"
+		light = ( 1 0.25 1 ) 5
+	}
+	Missile {
+		model = "skills/energyBeam/beamHeadSprite.md3"
+		skin = "skills/energyBeam/beamHeadSpritePurple.skin"
+		size = 4
+		light = ( 1 0.25 1 ) 5
+	}
+	Struggle {
+		model = "skills/energyBeam/beamstruggle.md3"
+		skin = "skills/energyBeam/beamstrugglePurple.skin"
+	}
+	Explosion {
+		model = "effects/explosion/explosion.md3"
+		skin = "effects/explosion/explosionPurple.skin"
+		light = ( 1 0.25 1 ) 5
+	}
+	Trail {
+		shader = "energyBeamPurple"
+	}
+	Hud {
+		displayName = "Ki Beam"
+		icon = "skills/energyBeam/kiBeamPink.png"
+	}
+
+}
+
+private "deathBeam" {
+	Charge {
+		shader = "energyBallYellow"
+		animationRange = [10 100]
+		light = ( 1 1 0 ) [0.1 2]
+		tagTo = "tag_weapon"
+	} 
+	Flash { 
+        soundFx = "skills/laserFlash.ogg"
+    }
+    Trail {
+        shader = "energyBeamBlue"
+		size = 10
+    }
+   Hud {
+        icon = "skills/freezaBeam/icon.png"
+        displayName = "Death Beam"
+    }
+}
+
+private "deathWave" {
+    Charge {
+        shader = "energyBallPink"
+        animationRange = [10 50]
+        size = [1 2]
+        light = ( 1 0.25 1 ) [0.25 5]
+        tagTo = "tag_weapon"
+    }
+    Flash {
+        light = ( 1 0.25 1 ) 5
+        soundFx = "skills/bigFlash3.ogg"
+    }
+    Missile {
+		shader = "energyBallPink"
+//      model = "skills/energySlice/slice.md3"
+//      skin = "skills/energySlice/slice.skin"
+        size = 1.75
+        light = ( 1 0.25 1 ) 5
+        loopFx = "effects/blastFly.ogg"
+//        spin = ( 0 0 1 )
+    }
+	Trail { 
+		shader = "trails/trailPink"
+	}
+    Explosion {
+		model = "effects/explosion/explosion.md3"
+		skin = "effects/explosion/explosionPurple.skin"
+		size = 64
+		light = ( 1 0.25 1 ) 50
+		duration = 4000
+		smokeParticles = "ExplosionSmokeLarge"
+    }
+    Hud {
+        icon = "skills/energySlice/icon.png"
+        displayName = "Death Wave"
+    }
+}
+
+private "superNova" {
+    Charge {
+        model = "skills/superNova/superNovaCharge.md3"
+        skin = "skills/superNova/superNova.skin"
+        animationRange = [10 100]
+        size = [0 50]
+        light = ( 1 0.5 0 ) [0.25 20]
+        spin = ( 0 0 0 )
+        loopFx = "skills/pulseLoop1.ogg"
+        timedFx = ( 5 "skills/pingCharge1.ogg")
+        tagTo = "tag_weapon"
+    }
+    Flash {
+        light = ( 1 0.5 0 ) 20
+        soundFx = "skills/bigFlash1.ogg"
+    }
+    Missile {
+        model = "skills/superNova/superNova.md3"
+        skin = "skills/superNova/superNova.skin"
+        size = 1
+        light = ( 1 0.5 0 ) 20
+        loopFx = "effects/blastFly.ogg"
+        spin = ( 0 0 0 )
+    }
+    Explosion {
+		model = "effects/explosion/HPEGlow.md3"
+		skin = "effects/explosion/HPExplosionSuperNova.skin"
+		size = 500
+		light = ( 1 0.5 0 ) 300
+		duration = 15000
+    }
+    Hud {
+        icon = "skills/superNova/icon.png"
+        displayName = "Super Nova"
+    }
+}
+
+private "deathball" {
+    Charge {
+        model = "skills/deathBall/deathballCharge.md3"
+        skin = "skills/deathBall/deathball.skin"
+        animationRange = [10 100]
+        size = [0 50]
+        light = ( 1 0.25 1 ) [0.25 20]
+        spin = ( 0 0 0 )
+        loopFx = "skills/pulseLoop1.ogg"
+        timedFx = ( 5 "skills/pingCharge1.ogg")
+        tagTo = "tag_weapon"
+    }
+    Flash {
+        light = ( 1 0.25 1 ) 20
+        soundFx = "skills/bigFlash1.ogg"
+    }
+    Missile {
+        model = "skills/deathBall/deathball.md3"
+        skin = "skills/deathBall/deathball.skin"
+        size = 1
+        light = ( 1 0.25 1 ) 20
+        loopFx = "effects/blastFly.ogg"
+        spin = ( 0 0 0 )
+    }
+    Explosion {
+		model = "effects/explosion/HPE.md3"
+		skin = "effects/explosion/HPExplosionDeathBall.skin"
+		size = 500
+		light = ( 1 0.25 1 ) 300
+		duration = 15000
+    }
+    Hud {
+        icon = "skills/deathBall/icon.png"
+        displayName = "Death Ball"
+    }
+}
+
+private "guidedDisk" = "disk" {
+    Charge {
+		model = "skills/energyDisk/disk.md3"
+        skin = "skills/energyDisk/purpleDisk.skin"
+        light = ( 1 0.25 1 ) [0 5]
+		size = [0.5 1]
+    }
+    Flash {
+        light = ( 1 0.25 1 ) 0
+    }
+    Missile {
+		model = "skills/energyDisk/disk.md3"
+        skin = "skills/energyDisk/purpleDisk.skin"
+        light = ( 1 0.25 1 ) 5
+    }
+    Hud {
+        icon = "skills/energyDisk/diskPurple.png"
+        displayName = "Guided Death Disk"
+    }
+}
+
+Weapon 1 = "pinkKiBlast" | "pinkKiStorm"
+Weapon 2 = "pinkKiBall" | "pinkKiBeam"
+Weapon 3 = "deathBeam" | "invisibleBlast"
+Weapon 4 = "deathWave"
+Weapon 5 = "superNova" | "deathBall"
+weapon 6 = "guidedDisk"

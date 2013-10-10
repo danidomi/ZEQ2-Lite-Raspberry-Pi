@@ -1,0 +1,262 @@
+ExplosionSmokeSmall {
+
+	Emitter {
+		type radius
+		radius 40
+		slide 10
+		count 25
+		jitter 5
+		life 5000
+
+		Particle {
+			map "celSmokeShader"
+			//map "smokeModel"
+			//model "Effects/Smoke/smoke.skin"
+			life 5000
+			mass 1
+			scale 50
+			outScale 2 5000
+			inRgba ( 1 1 1 0 ) 250
+			rgba ( 1 1 1 1 )
+			outRgba ( 1 1 1 0 ) 1500
+
+		}
+		Particle {
+			map "celSmokeShader"
+			//map "smokeModel"
+			//model "Effects/Smoke/smoke.skin"
+			life 5000
+			mass 1
+			scale 50
+			outScale 5 5000
+			inRgba ( 1 1 1 0 ) 250
+			rgba ( 1 1 1 1 )
+			outRgba ( 1 1 1 0 ) 1500
+
+		}
+		Particle {
+			map "celSmokeShader"
+			//map "smokeModel"
+			//model "Effects/Smoke/smoke.skin"
+			life 5000
+			mass 1
+			scale 50
+			outScale 10 5000
+			inRgba ( 1 1 1 0 ) 250
+			rgba ( 1 1 1 1 )
+			outRgba ( 1 1 1 0 ) 1500
+
+		}
+	}
+
+	Force {
+		type spherical
+		area sphere 0
+		falloff 75
+		amount 20
+
+	}
+
+	Force {
+		type drag
+		area infinite
+		amount 0.3
+	}
+
+}
+
+ExplosionSmokeMedium {
+
+	Emitter {
+		type radius
+		radius 40
+		slide 10
+		count 50
+		jitter 5
+		life 5000
+
+		Particle {
+			map "celSmokeShader"
+			//map "smokeModel"
+			//model "Effects/Smoke/smoke.skin"
+			life 5000
+			mass 1
+			scale 150
+			outScale 10 5000
+			inRgba ( 1 1 1 0 ) 500
+			rgba ( 1 1 1 1 )
+			outrgba ( 1 1 1 0 ) 1500
+
+		}
+		Particle {
+			map "celSmokeShader"
+			//map "smokeModel"
+			//model "Effects/Smoke/smoke.skin"
+			life 5000
+			mass 1
+			scale 150
+			outScale 15 5000
+			inRgba ( 1 1 1 0 ) 500
+			rgba ( 1 1 1 1 )
+			outrgba ( 1 1 1 0 ) 1500
+
+		}
+		Particle {
+			map "celSmokeShader"
+			//map "smokeModel"
+			//model "Effects/Smoke/smoke.skin"
+			life 5000
+			mass 1
+			scale 15
+			outScale 20 5000
+			inRgba ( 1 1 1 0 ) 500
+			rgba ( 1 1 1 1 )
+			outrgba ( 1 1 1 0 ) 1500
+
+		}
+	}
+
+	Emitter {
+		type radius
+		radius 40
+		slide 10
+		count 25
+		jitter 5
+		life 1000
+		delay 250
+		period 250
+
+		Particle {
+			map "celSmokeShader"
+			//map "smokeModel"
+			//model "Effects/Smoke/smoke.skin"
+			life 1000
+			mass 1
+			scale 100
+			outScale 5 1000
+			inRgba ( 1 1 1 0 ) 250
+			rgba ( 1 1 1 1 )
+			outRgba ( 1 1 1 0 ) 500
+
+		}
+		Particle {
+			map "celSmokeShader"
+			//map "smokeModel"
+			//model "Effects/Smoke/smoke.skin"
+			life 5000
+			mass 1
+			scale 10
+			outScale 10 5000
+			inRgba ( 1 1 1 0 ) 250
+			rgba ( 1 1 1 1 )
+			outRgba ( 1 1 1 0 ) 1500
+
+		}
+	}
+
+	Force {
+		type spherical
+		area sphere 0
+		falloff 150
+		amount 50
+
+	}
+
+	Force {
+		type drag
+		area infinite
+		amount 0.3
+	}
+
+}
+
+ExplosionSmokeLarge {
+	gravity 0.25
+	Emitter {
+		type radius
+		radius 40
+		slide 10
+		count 100
+		jitter 5
+		life 5000
+
+		Particle {
+			map "celSmokeShader"
+			//map "smokeModel"
+			//model "Effects/Smoke/smoke.skin"
+			life 10000
+			mass 1
+			scale 500
+			outScale 20 10000
+			inRgba ( 1 1 1 0 ) 500
+			rgba ( 1 1 1 1 )
+			outrgba ( 1 1 1 0 ) 2500
+
+		}
+		Particle {
+			map "celSmokeShader"
+			//map "smokeModel"
+			//model "Effects/Smoke/smoke.skin"
+			life 10000
+			mass 1
+			scale 50
+			outScale 25 10000
+			inRgba ( 1 1 1 0 ) 500
+			rgba ( 1 1 1 1 )
+			outrgba ( 1 1 1 0 ) 2500
+
+		}
+		Particle {
+			map "celSmokeShader"
+			//map "smokeModel"
+			//model "Effects/Smoke/smoke.skin"
+			life 10000
+			mass 1
+			scale 500
+			outScale 30 10000
+			inRgba ( 1 1 1 0 ) 500
+			rgba ( 1 1 1 1 )
+			outrgba ( 1 1 1 0 ) 2500
+
+		}
+	}
+
+	Emitter {
+		type radius
+		radius 40
+		slide 10
+		count 50
+		jitter 5
+		life 1500
+		delay 250
+		period 250
+
+		Particle {
+			map "celSmokeShader"
+			//map "smokeModel"
+			//model "Effects/Smoke/smoke.skin"
+			life 1500
+			mass 1
+			scale 250
+			outScale 10 1500
+			inRgba ( 1 1 1 0 ) 500
+			rgba ( 1 1 1 1 )
+			outrgba ( 1 1 1 0 ) 1000
+
+		}
+	}
+	Force {
+		type spherical
+		area sphere 0
+		falloff 250
+		amount 150
+
+	}
+
+	Force {
+		type drag
+		area infinite
+		amount 0.3
+	}
+
+}

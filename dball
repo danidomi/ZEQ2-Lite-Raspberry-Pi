@@ -1,0 +1,79 @@
+#!/bin/sh
+
+# quake3 or quake3-server or whatever
+
+IOQ3SELF=dall
+# "server" or "client"
+IOQ3ROLE=client
+# ioquake3 or ioq3ded
+IOQ3BINARY=ioquake3
+# /usr/lib/openarena or /usr/lib/openarena-server
+FS_BASEPATH=/home/pi/Projects/dball
+
+ENGINE="/usr/lib/ioquake3/${IOQ3BINARY}"
+
+DEBUGGER="$OPENARENA_DEBUGGER"
+
+# we're a standalone game
+CVARS="+set com_basegame ZEQ2"
+CVARS="$CVARS +set fs_basepath $FS_BASEPATH"
+CVARS="$CVARS +set com_homepath .dball"
+CVARS="$CVARS  +set com_hunkmegs 256 +set com_zonemegs 32"
+
+# OA uses a different protocol number to reflect incompatible game content.
+# When it says "71", that's actually the legacy Quake III Arena 1.32c protocol,
+# protocol 68.
+CVARS="$CVARS +set com_legacyprotocol 71"
+# For the moment, disable the modern protocol, by setting this cvar to the
+# same thing. When OA upstream decide what value they'll use, we should
+# catch up.
+CVARS="$CVARS +set com_protocol 71"
+
+# OA's default master server is different
+CVARS="$CVARS +set sv_master1 dpmaster.deathmask.net"
+# update.quake3arena.com is pretty irrelevant if you're playing OA
+CVARS="$CVARS +set cl_motd 0"
+# OA 0.8.5 sends QuakeArena-1 heartbeats, which dpmaster interprets as implying
+# that it's a version of Quake III Arena from the future rather than a separate
+# game. Remain compatible even in ioquake3 >= r2105, by leaving com_gamename
+# set to the default, "Quake3Arena"; this will hopefully be fixed in a future
+# OA version, but that's a compatibility break.
+#CVARS="$CVARS +set com_gamename Quake3Arena"
+
+QUIET=0
+
+EXCUSE="\
+OpenArena ${IOQ3ROLE} wrapper for Debian\n\
+\n\
+Usage: ${IOQ3SELF} [OPTION]...\n\
+\n\
+ -h, --help\t\tDisplay this help\n\
+ -q, --quiet\t\tDisable console output\n\
+  +<internal command>\tPass commands to the engine\n"
+
+while [ "$1" != "" ]; do
+  case "$1" in
+    -h|--help)
+      echo ${EXCUSE}
+      exit 0
+      ;;
+    -q|--quiet)
+      CVARS="$CVARS +set ttycon 0"
+      QUIET=1
+      ;;
+    *)
+      break
+      ;;
+  esac
+  shift
+done
+
+if test "z$QUIET" = z1; then
+  exec >/dev/null 2>&1;
+fi
+
+if test -n "$OPENARENA_BACKTRACE"; then
+  exec gdb -return-child-result -batch -ex run -ex 'thread apply all bt full' -ex kill -ex quit --args ${ENGINE} ${CVARS} "$@"
+else
+  exec ${DEBUGGER} ${ENGINE} ${CVARS} "$@"
+fi

@@ -1,0 +1,30 @@
+import "baseAttack" = "skills/shared.phys" "baseAttack"
+import "kiBlast" = "skills/shared.phys" "kiBlast"
+import "kiStorm" = "skills/shared.phys" "kiStorm"
+import "kiBall" = "skills/shared.phys" "kiBall"
+import "kiBeam" = "skills/shared.phys" "kiBeam"
+
+private "raditzBeam" = "baseAttack" {
+	Physics {
+		type = "Beam"
+		speed = 5000
+		radius = 125 + 0
+	}
+	Costs {
+		powerLevel = 7
+		chargeReadyPct = 20
+	}
+	Detonation {
+		damage = 1500 +0
+		radius = 3500 +0
+		duration = 4000
+	}
+//	Trajectory {
+//		type = "Guided"
+//	}
+}
+
+Weapon 1 = "kiBlast" | "kiStorm"
+Weapon 2 = "kiBall" | "kiBeam"
+Weapon 3 = "raditzBeam"
+

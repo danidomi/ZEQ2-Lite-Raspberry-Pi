@@ -1,0 +1,116 @@
+import "baseAttack" = "skills/shared.phys" "baseAttack"
+import "kiBlast" = "skills/shared.phys" "kiBlast"
+import "kiStorm" = "skills/shared.phys" "kiStorm"
+import "kiBall" = "skills/shared.phys" "kiBall"
+import "kiBeam" = "skills/shared.phys" "kiBeam"
+
+private "scatterShot" {
+  Requirement {
+    Maximum = 8000
+  }
+  Physics {
+    type = "Missile"
+    acceleration = -1000
+    speed = 2000
+    range = 10000
+    radius = 25
+    lifetime = 120000
+  }
+  Costs {
+    powerLevel = 100
+    cooldownTime = 200
+  }
+  Detonation {
+    type = "Ki"
+    damage = 10
+    radius = 200
+  }
+  Trajectory {
+    range = 1000
+  }
+}
+
+private "scatterShotGuide" {
+  Physics {
+    type = "Trigger"
+    range = 10000
+    speed = 1000
+    acceleration = 5000
+  }
+  Costs {
+    powerLevel = 0
+    cooldownTime = 0
+    chargeTime = 0
+  }
+  Muzzle {
+    FOV = 360
+  }
+  Trajectory {
+    type = "Cylinder"
+    range = 10000
+  }
+}
+
+private "superKiBall" = "baseAttack" {
+  Physics {
+    speed = 7000
+    radius = 50 +50
+  }
+  Costs {
+    powerLevel = 9
+    chargeReadyPct = 20
+  }
+  Detonation {
+    damage = 1400 +0
+    radius = 2000 +0
+  }
+
+}
+
+private "masenko" = "baseAttack" {
+  Physics {
+    type = "Beam"
+    speed = 5000
+    radius = 125 +0
+  }
+  Costs {
+    powerLevel = 70
+    chargeReadyPct = 20
+  }
+  Detonation {
+    damage = 1000 +0
+    radius = 3500 +0
+  }
+  Trajectory {
+    type = "Guided"
+  }
+}
+
+private "specialBeamCannon" = "baseAttack" {
+  Physics {
+    type = "Beam"
+    speed = 25000
+    radius = 10
+    drain = 0
+  }
+  Costs {
+    powerLevel = 4
+    chargeReadyPct = 66
+    chargeTime = 450
+  }
+  Detonation {
+    type = "Pierce"
+    damage = 1800 +0
+    radius = 200 +200
+  }
+  Restrictions {
+    movement = 1
+  } 
+}
+
+Weapon 1 = "kiBlast" | "kiStorm"
+Weapon 2 = "kiBall" | "kiBeam"
+Weapon 3 = "scatterShot" | "scatterShotGuide"
+Weapon 4 = "superKiBall"
+Weapon 5 = "masenko"
+Weapon 6 = "specialBeamCannon"

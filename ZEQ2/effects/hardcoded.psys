@@ -1,0 +1,762 @@
+MeleeSpeedLines {
+
+	Emitter {
+		type point
+		count 1
+
+		link auto
+
+		Particle {
+			type ray
+			map "meleeSpeedLines"
+			life 200
+			mass 1
+			scale 1
+			rgba ( 1 1 1 1 )
+			outRgba ( 0 0 0 1 ) 50
+		}
+
+	}
+
+	Force {
+		type spherical
+		area sphere 6
+		falloff 0
+		amount 100
+
+		link auto
+	}
+}
+
+ShadowLines {
+
+	Emitter {
+		type point
+		count 1
+
+		link auto
+
+		Particle {
+			type ray
+			map "ShadowLine"
+			life 200
+			mass 1
+			scale 1
+			rgba ( 1 1 1 1 )
+			outRgba ( 0 0 0 1 ) 50
+		}
+
+	}
+
+	Force {
+		type directional
+		area infinite
+		amount 0.1
+
+		dir ( -1 0 0 )
+
+		link auto
+	}
+}
+
+SmokeSmall {
+
+	Emitter {
+		type point
+		count 10
+		jitter 5
+
+		Particle {
+			map  "celSmokeShader"
+			life 10000
+			mass 1
+			scale 32
+			outScale 90 9500
+			rgba ( 1 1 1 1 )
+			outrgba ( 1 1 1 0 ) 8000
+		}
+	}
+
+	Force {
+		type spherical
+		area sphere 0
+		falloff 15
+		amount 7
+	}
+
+	Force {
+		type directional
+		area infinite
+		amount 0.1
+
+		dir ( 0 0 1 )
+	}
+
+	Force {
+		type drag
+		area infinite
+		amount 0.3
+	}
+
+	Constraint {
+		type maxDistance
+		value 50
+	}
+}
+
+SmallExplosionDebris {
+	gravity 10
+
+	Emitter {
+		type radius
+		radius 5
+		slide  2
+		count 25
+		jitter 5
+
+		Particle {
+			map "rocks"
+			model "effects/explosion/rock1.md3"
+			life 5000
+			mass 1
+			scale 1
+			rgba ( 1 1 1 1 )
+			rotate ( 1 1 0 1 )
+		}
+
+		Particle {
+			map "rocks"
+			model "effects/explosion/rock2.md3"
+			life 5000
+			mass 1
+			scale 2
+			rgba ( 1 1 1 1 )
+			rotate ( 1 1 0 1 )
+		}
+
+		Particle {
+			map "rocks"
+			model "effects/explosion/rock3.md3"
+			life 5000
+			mass 1
+			scale 3
+			rgba ( 1 1 1 1 )
+			rotate ( 1 1 0 1 )
+		}
+	}
+
+	Force {
+		type spherical
+		area sphere 0
+		falloff 100
+		amount 100
+	}
+	Constraint {
+		type plane
+		value 0.5
+	}
+}
+
+NormalExplosionDebris {
+	gravity 10
+
+	Emitter {
+		type radius
+		radius 15
+		slide  2
+		count 30
+		jitter 5
+
+		Particle {
+			map "rocks"
+			model "effects/explosion/rock1.md3"
+			life 7500
+			mass 1
+			scale 4
+			rgba ( 1 1 1 1 )
+			rotate ( 1 1 0 1 )
+		}
+
+		Particle {
+			map "rocks"
+			model "effects/explosion/rock2.md3"
+			life 7500
+			mass 1
+			scale 5
+			rgba ( 1 1 1 1 )
+			rotate ( 1 1 0 1 )
+		}
+
+		Particle {
+			map "rocks"
+			model "effects/explosion/rock3.md3"
+			life 7500
+			mass 1
+			scale 6
+			rgba ( 1 1 1 1 )
+			rotate ( 1 1 0 1 )
+		}
+	}
+
+	Force {
+		type spherical
+		area sphere 0
+		falloff 150
+		amount 150
+	}
+	Force {
+		type directional
+		area cylinder
+		amount 25
+		falloff 25
+
+		dir ( 0 0 1 )
+
+		link auto
+	}
+	Constraint {
+		type plane
+		value 0.5
+	}
+}
+
+LargeExplosionDebris {
+	gravity 10
+
+	Emitter {
+		type radius
+		radius 25
+		slide  2
+		count 50
+		jitter 5
+
+		Particle {
+			map "rocks"
+			model "effects/explosion/rock1.md3"
+			life 10000
+			mass 10
+			scale 7
+			rgba ( 1 1 1 1 )
+			rotate ( 1 1 0 1 )
+		}
+
+		Particle {
+			map "rocks"
+			model "effects/explosion/rock2.md3"
+			life 10000
+			mass 10
+			scale 8
+			rgba ( 1 1 1 1 )
+			rotate ( 1 1 0 1 )
+		}
+
+		Particle {
+			map "rocks"
+			model "effects/explosion/rock3.md3"
+			life 10000
+			mass 10
+			scale 9
+			rgba ( 1 1 1 1 )
+			rotate ( 1 1 0 1 )
+		}
+	}
+
+	Force {
+		type spherical
+		area sphere 0
+		falloff 300
+		amount 300
+	}
+	Force {
+		type directional
+		area cylinder
+		amount 25
+		falloff 25
+
+		dir ( 0 0 1 )
+
+		link auto
+	}
+	Constraint {
+		type plane
+		value 0.5
+	}
+}
+
+ExtraLargeExplosionDebris {
+	gravity 10
+
+	Emitter {
+		type radius
+		radius 50
+		slide  2
+		count 100
+		jitter 5
+
+		Particle {
+			map "rocks"
+			model "effects/explosion/rock1.md3"
+			life 15000
+			mass 1
+			scale 10
+			rgba ( 1 1 1 1 )
+			rotate ( 1 1 0 1 )
+		}
+
+		Particle {
+			map "rocks"
+			model "effects/explosion/rock2.md3"
+			life 15000
+			mass 1
+			scale 11
+			rgba ( 1 1 1 1 )
+			rotate ( 1 1 0 1 )
+		}
+
+		Particle {
+			map "rocks"
+			model "effects/explosion/rock3.md3"
+			life 15000
+			mass 1
+			scale 12
+			rgba ( 1 1 1 1 )
+			rotate ( 1 1 0 1 )
+		}
+	}
+
+	Force {
+		type spherical
+		area sphere 0
+		falloff 600
+		amount 600
+	}
+	Force {
+		type directional
+		area cylinder
+		amount 25
+		falloff 25
+
+		dir ( 0 0 1 )
+
+		link auto
+	}
+	Constraint {
+		type plane
+		value 0.5
+	}
+}
+
+SmallExplosionDebrisLow {
+	gravity 10
+
+	Emitter {
+		type radius
+		radius 5
+		slide  2
+		count 25
+		jitter 5
+
+		Particle {
+			map "Particles_Rock1"
+			life 10000
+			mass 1
+			scale 2
+			rgba ( 1 1 1 1 )
+			rotate ( 1 1 1 1 )
+		}
+
+		Particle {
+			map "Particles_Rock2"
+			life 10000
+			mass 3
+			scale 3
+			rgba ( 1 1 1 1 )
+			rotate ( 1 1 1 1 )
+		}
+
+		Particle {
+			map "Particles_Rock3"
+			life 10000
+			mass 5
+			scale 4
+			rgba ( 1 1 1 1 )
+			rotate ( 1 1 1 1 )
+		}
+	}
+
+	Force {
+		type spherical
+		area sphere 0
+		falloff 100
+		amount 100
+	}
+	Force {
+		type drag
+		area infinite
+		amount 2
+
+		link entity
+	}
+	Constraint {
+		type plane
+		value 0.5
+	}
+}
+
+NormalExplosionDebrisLow {
+	gravity 10
+
+	Emitter {
+		type radius
+		radius 15
+		slide  2
+		count 30
+		jitter 5
+
+		Particle {
+			map "Particles_Rock1"
+			life 10000
+			mass 1
+			scale 8
+			rgba ( 1 1 1 1 )
+			rotate ( 1 1 1 1 )
+		}
+
+		Particle {
+			map "Particles_Rock2"
+			life 10000
+			mass 3
+			scale 10
+			rgba ( 1 1 1 1 )
+			rotate ( 1 1 1 1 )
+		}
+
+		Particle {
+			map "Particles_Rock3"
+			life 10000
+			mass 5
+			scale 12
+			rgba ( 1 1 1 1 )
+			rotate ( 1 1 1 1 )
+		}
+	}
+
+	Force {
+		type spherical
+		area sphere 0
+		falloff 150
+		amount 150
+	}
+	Force {
+		type drag
+		area infinite
+		amount 2
+
+		link entity
+	}
+	Constraint {
+		type plane
+		value 0.5
+	}
+}
+
+LargeExplosionDebrisLow {
+	gravity 10
+
+	Emitter {
+		type radius
+		radius 25
+		slide  2
+		count 50
+		jitter 5
+
+		Particle {
+			map "Particles_Rock1"
+			life 10000
+			mass 1
+			scale 16
+			rgba ( 1 1 1 1 )
+			rotate ( 1 1 1 1 )
+		}
+
+		Particle {
+			map "Particles_Rock2"
+			life 10000
+			mass 3
+			scale 18
+			rgba ( 1 1 1 1 )
+			rotate ( 1 1 1 1 )
+		}
+
+		Particle {
+			map "Particles_Rock3"
+			life 10000
+			mass 5
+			scale 20
+			rgba ( 1 1 1 1 )
+			rotate ( 1 1 1 1 )
+		}
+	}
+
+	Force {
+		type spherical
+		area sphere 0
+		falloff 500
+		amount 500
+	}
+	Force {
+		type drag
+		area infinite
+		amount 2
+
+		link entity
+	}
+	Constraint {
+		type plane
+		value 0.5
+	}
+}
+
+ExtraLargeExplosionDebrisLow {
+	gravity 10
+
+	Emitter {
+		type radius
+		radius 50
+		slide  2
+		count 100
+		jitter 5
+
+		Particle {
+			map "Particles_Rock1"
+			life 10000
+			mass 1
+			scale 30
+			rgba ( 1 1 1 1 )
+			rotate ( 1 1 1 1 )
+		}
+
+		Particle {
+			map "Particles_Rock2"
+			life 10000
+			mass 3
+			scale 40
+			rgba ( 1 1 1 1 )
+			rotate ( 1 1 1 1 )
+		}
+
+		Particle {
+			map "Particles_Rock3"
+			life 10000
+			mass 5
+			scale 50
+			rgba ( 1 1 1 1 )
+			rotate ( 1 1 1 1 )
+		}
+	}
+
+	Force {
+		type spherical
+		area sphere 0
+		falloff 1000
+		amount 1000
+	}
+	Force {
+		type drag
+		area infinite
+		amount 2
+
+		link entity
+	}
+	Constraint {
+		type plane
+		value 0.5
+	}
+}
+
+TrailDebris {
+	gravity 9.8
+
+	Emitter {
+		type radiusGround
+		radius 5
+		grndDist 100
+		slide  5
+		count 1
+		period 20
+
+		link entity
+
+		Particle {
+			map "Particles_Rock1"
+			life 10000
+			mass 1
+			scale 10
+			rgba ( 1 1 1 1 )
+		}
+
+		Particle {
+			map "Particles_Rock2"
+			life 10000
+			mass 1
+			scale 10
+			rgba ( 1 1 1 1 )
+		}
+
+		Particle {
+			map "Particles_Rock3"
+			life 10000
+			mass 1
+			scale 10
+			rgba ( 1 1 1 1 )
+		}
+	}
+
+	Force {
+		type spherical
+		area sphere 0
+		falloff 50
+		amount 100
+
+		link entity
+	}
+
+	Force {
+		type directional
+		area sphere 0
+		falloff 60
+		amount 100
+
+		link entity
+		dir ( 0 0 1 )
+	}
+
+	Constraint {
+		type plane
+		value 0.3
+	}
+}
+
+AuraSmokeBurst {
+	gravity 0.05
+	Emitter {
+		type radiusGround
+		grndDist 48
+		radius 40
+		slide 40
+		count 50
+		jitter 5
+		life 1000
+		Particle {
+			map "celSmokeShader"
+			//model "Effects/Smoke/smoke.skin"
+			life 1000
+			mass 1
+			scale 25
+			rgba ( 1 1 1 1 )
+			outRgba ( 1 1 1 0 ) 2500
+
+		}
+		Particle {
+			map "celSmokeShader2"
+			//model "Effects/Smoke/smoke.skin"
+			life 1000
+			mass 1
+			scale 25
+			rgba ( 1 1 1 1 )
+			outRgba ( 1 1 1 0 ) 2500
+
+		}
+		Particle {
+			map "celSmokeShader3"
+			//model "Effects/Smoke/smoke.skin"
+			life 1000
+			mass 1
+			scale 25
+			rgba ( 1 1 1 1 )
+			outRgba ( 1 1 1 0 ) 2500
+
+		}
+	}
+
+	Force {
+		type spherical
+		area sphere 0
+		falloff 80
+		amount 20
+
+	}
+
+	Force {
+		type drag
+		area infinite
+		amount 0.2
+	}
+
+}
+
+AuraDebris {
+	gravity 0.5
+
+	Emitter {
+		type radiusGround
+		radius 50
+		grndDist 48
+		slide  10
+		jitter 25
+		count 1
+		period 150
+
+		link entity
+
+		Particle {
+			map "Particles_Rock1"
+			life 5000
+			mass 1
+			scale 1
+			outScale 0.1 200
+			rgba ( 1 1 1 1 )
+		}
+
+		Particle {
+			map "Particles_Rock2"
+			life 5000
+			mass 1
+			scale 1
+			outScale 0.1 200
+			rgba ( 1 1 1 1 )
+		}
+
+		Particle {
+			map "Particles_Rock3"
+			life 5000
+			mass 1
+			scale 1
+			outScale 0.1 200
+			rgba ( 1 1 1 1 )
+		}
+	}
+
+	Force {
+		type directional
+		area infinite
+		falloff 1
+		amount 1.25
+		
+		link entity
+		dir ( 0 0 1 )
+	}
+
+	Force {
+		type drag
+		area infinite
+		amount 2
+
+		link entity
+	}
+
+	Constraint {
+		type plane
+		value 0.3
+	}
+}

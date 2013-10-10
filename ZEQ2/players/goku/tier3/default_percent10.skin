@@ -1,0 +1,17 @@
+hairSS,gokuHeadSSDamaged10
+faceSS,gokuHeadSSDamaged10
+eyesSS,gokuHeadEyesSSDamaged10
+gokuHair,gokuHairSSDamaged10
+gokuPants,gokuPantsSSDamaged10
+gokuBoots,gokuBootsSSDamaged10
+gokuLowerAccessories,gokuLowerAccessoriesSSDamaged10
+gokuUpperBody,gokuUpperBodySSDamaged10
+gokuUpperAccessories,gokuUpperAccessoriesSSDamaged10
+gokuUndershirt,gokuUndershirtSSDamaged10
+gokuShirt,gokuShirtSSDamaged10
+UpperSprite,LODSprite
+LowerSprite,LODSprite
+HeadSprite,LODSprite
+tag_torso,
+tag_head,
+tag_eyes,

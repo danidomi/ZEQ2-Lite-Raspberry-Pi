@@ -1,0 +1,110 @@
+import "baseAttack" = "skills/shared.phys" "baseAttack"
+import "invisibleBlast" = "skills/shared.phys" "invisibleblast"
+import "kiBlast" = "skills/shared.phys" "kiBlast"
+import "kiStorm" = "skills/shared.phys" "kiStorm"
+import "kiBall" = "skills/shared.phys" "kiBall"
+import "kiBeam" = "skills/shared.phys" "kiBeam"
+
+private "kameHameHa" = "baseAttack" {
+	Physics {
+		type = "Beam"
+		speed = 5000
+		radius = 50 + 50
+	}
+	Costs {
+		powerLevel = 50
+		chargeReadyPct = 20
+	}
+	Detonation {
+		damage = 150 +100
+		radius = 3000 +1500
+		duration = 4000
+	}
+}
+
+private "solarFlare" = "invisibleBlast" {
+	Requirement {
+		flight = 1
+	}
+	Physics {
+		type = "Missile"
+		range = 100
+		radius = 300
+		blind = 6000
+	}
+	Costs {
+		powerLevel = 50
+		chargeReadyPct = 50
+	}
+	Detonation {
+		type = "Ki"
+		damage = 0
+		knockback = 0
+		radius = 2000 +300
+		duration = 5000
+	}
+	Trajectory {
+		type = "LineOfSight"
+	}
+}
+
+private "energyBlast" = "invisibleBlast" {
+	Physics {
+		type = "Missile"
+		range = 100
+		radius = 300
+	}
+	Costs {
+		powerLevel = 20
+	}
+	Detonation {
+		type = "Ki"
+		radius = 300 +300
+		knockback = 3500
+		duration = 100
+	}
+	Trajectory {
+		type = "LineOfSight"
+	}
+}
+
+private "energyBlastConstant" = "invisibleBlast" {
+	Muzzle {
+		nrShots = 1
+	}
+}
+
+private "spiritBomb" = "baseAttack" {
+	Requirement {
+		maxTier = 0
+	}
+	Physics {
+		speed = 1000
+		radius = 100 +100
+		acceleration = 1200
+	}
+	Costs {
+		powerLevel = 0
+		chargeTime = 600
+		cooldownTime = 1500
+		chargeReadyPct = 80
+	}
+	Detonation {
+		damage = 900 +300
+		radius = 25000 +0
+		duration = 15000
+	}
+	Muzzle {
+		offsetHeight = 350
+	}
+	Restrictions {
+		movement = 1
+	}
+
+}
+
+Weapon 1 = "kiBlast" | "kiStorm"
+Weapon 2 = "kiBall" | "kiBeam"
+Weapon 3 = "energyBlast" | "energyBlastConstant"
+Weapon 4 = "kamehameha" 
+Weapon 5 = "spiritBomb"

@@ -1,0 +1,16 @@
+gokuNormalHead,gokuHeadKK
+gokuNormalHeadEyes,gokuHeadEyes
+gokuPants,gokuPantsKK
+gokuBoots,gokuBootsKK
+gokuLowerAccessories,gokuLowerAccessoriesKK
+gokuUpperBody,gokuUpperBodyKK
+gokuUpperAccessories,gokuUpperAccessoriesKK
+gokuUndershirt,gokuUndershirtKK
+gokuShirt,gokuEmblemShirtKK
+HeadSprite,LODSprite
+HeadSprite,LODSprite
+LowerSprite,LODSprite
+UpperSprite,LODSprite
+tag_head,
+tag_eyes,
+tag_torso,

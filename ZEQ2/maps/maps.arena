@@ -1,0 +1,28 @@
+{
+map		"desert"
+bots		"goku"
+timelimit	"10"
+longname	"Earth - Desert Wasteland"
+type		"tourney ffa team struggle"
+}
+{
+map         "landing"
+bots		"goku"
+timelimit	"10"
+longname    "Earth - Crash Landing"
+type        "tourney ffa team struggle"
+}
+{
+map         "lastStand"
+bots		"goku"
+timelimit	"10"
+longname    "Earth - Last Stand"
+type        "tourney ffa team struggle"
+}
+{
+map         "namek"
+bots		"goku"
+timelimit	"10"
+longname    "Namek - Mainland"
+type        "tourney ffa team struggle"
+}

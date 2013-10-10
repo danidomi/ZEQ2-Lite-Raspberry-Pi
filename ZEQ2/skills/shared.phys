@@ -1,0 +1,155 @@
+//=====================================
+// Base Blast
+//=====================================
+public "baseAttack" {
+	Physics {
+		type = "Missile"
+		lifetime = 120000
+		drain = 1
+		swat = 0
+	}
+	Costs {
+		cooldownTime = 1000
+		chargeTime = 100
+		chargeReadyPct = 25
+	}
+	Detonation {
+		type = "Ki"
+		damage = 125 +0
+		radius = 25 +0
+		duration = 1000
+	}
+	Muzzle {
+		nrShots = 1
+	}
+	Trajectory {
+		type = "LineOfSight"
+	}
+}
+public "kiBlast" = "baseAttack" {
+	Physics {
+		speed = 35000
+		radius = 25 +0
+		swat = 1
+		range = 600000
+	}
+	Detonation {
+		impede = 3000
+		duration = 1250
+		knockback = 800
+	}
+	Costs {
+		powerLevel = 1
+		chargeTime = 10
+		cooldownTime = 700
+	}
+}
+public "kiStorm" = "baseAttack"{
+	Physics {
+		speed = 8000
+		swat = 1
+	}
+	Costs {
+		powerLevel = 25
+		cooldownTime = 300
+		chargeReadyPct = 0
+		chargeTime = 0
+	}
+	Detonation {
+		impede = 1000
+		type = "Ki"
+		damage = 50 +0
+		radius = 200 +0
+		duration = 800
+	}
+	Muzzle {
+		offsetWidth = 12
+		angleWidth = 8
+		flipInWidth = true
+	}
+	Trajectory {
+		type = "Arch"
+		range = 1000000
+	}
+}
+public "kiBall" = "baseAttack" {
+	Physics {
+		speed = 5000
+		radius = 125 +0
+	}
+	Costs {
+		powerLevel = 5
+		chargeTime = 20
+	}
+	Detonation {
+		damage = 500 +0
+		radius = 200 +0
+		duration = 1500
+	}
+}
+public "kiBeam" = "baseAttack" {
+	Physics {
+		type = "Beam"
+		speed = 6000
+		radius = 100 +0
+	}
+	Costs {
+		powerLevel = 4
+		chargeTime = 20
+	}
+	Detonation {
+		damage = 350 +0
+		radius = 200 +0
+		duration = 2000
+	}
+}
+public "disk" {
+	Physics {
+		type = "Missile"
+		speed = 7000
+		radius = 70
+		lifetime = 10000
+	}
+	Costs {
+		powerLevel = 20
+		cooldownTime = 1000
+		chargeTime = 100
+		chargeReadyPct = 50
+	}
+	Detonation {
+		type = "Slice"
+		damage = 10000
+		radius = 50
+	}
+	Muzzle {
+		nrShots = 1
+	}
+	Trajectory {
+		type = "LineOfSight"
+	}
+	Restrictions {
+		movement = 1
+  	} 
+}
+public "invisibleBlast" {
+	Physics {
+		type = "Hitscan"
+		range = 1000
+	}
+	Costs {
+		powerLevel = 1
+		chargeTime = 10
+		cooldownTime = 1000
+	}
+	Detonation {
+		type = "Ki"
+		damage = 50
+		knockback = 2000
+	}
+	Muzzle {
+		nrShots = 1
+	}
+	Trajectory {
+		type = "LineOfSight"
+	}
+}

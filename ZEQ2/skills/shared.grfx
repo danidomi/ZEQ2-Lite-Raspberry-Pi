@@ -1,0 +1,195 @@
+//=====================================
+// Base Blast
+//=====================================
+public "baseAttack" {
+	Charge {
+		shader = "energyBallYellow"
+		animationRange = [10 100]
+		light = ( 1 1 0 ) [0.1 2]
+		tagTo = "tag_weapon"
+	}
+	Flash { 
+		light = ( 1 1 0 ) 5
+		particles = "EnergyBallYellowFlash"
+	}
+	Missile {
+		shader = "energyBallYellow"
+		light = ( 1 1 0 ) 5
+		loopFx = "effects/blastFly.ogg"
+	}
+	Explosion {
+		model = "effects/explosion/explosion.md3"
+		skin = "effects/explosion/explosionYellow.skin"
+		light = ( 0.85 0.97 0 ) 5
+		soundFx = "effects/explosion/explosion2.ogg"
+		shockwave = "effects/explosion/explosionShockwave.md3" "effects/explosion/explosionShockwave.skin"
+		markShader = "markCrater"
+		markSize = 100
+	}
+}
+
+public "kiBlast" = "baseAttack" {
+	Charge {
+		size = [0.1 1.0]
+		timedFx = (1 "skills/pitchCharge.ogg")
+	}
+	Flash {
+		soundFx = "skills/quickFlash1.ogg"
+	}
+	Missile {
+		size = 10
+	}
+	Trail {
+		shader = "trails/trailYellow"
+		size = 5
+	}
+	Explosion {
+		size = 6
+		duration = 1250
+		smokeParticles = "ExplosionSmokeSmall"
+	}
+	Hud {
+		displayName = "Ki Blast"
+		icon = "skills/energyBlast/kiBlast.png"
+	}
+}
+
+public "kiStorm" = "baseAttack" {
+	Charge {
+		size = 1
+	}
+	Flash {
+		soundFx = (
+			"skills/quickFlash2.ogg"
+			"skills/quickFlash3.ogg"
+		)
+	}
+	Missile {
+		size = 2
+	}
+	Trail { 
+		shader = "trails/trailYellow"
+		size = 5
+	}
+	Explosion {
+		size = 5
+		duration = 1000
+		smokeParticles = "ExplosionSmokeSmall"
+	}
+	Hud {
+		displayName = "Ki Storm"
+		icon = "skills/energyBlast/kiBlast.png"
+	}
+}
+
+public "kiBall" = "baseAttack" {
+	Charge {
+		size = [0.1 2.0]
+		tagTo = "tag_weapon"
+		timedFx = (1 "skills/energyBall/ballCharge.ogg")
+	}
+	Flash {
+		soundFx = "skills/bigFlash2.ogg"
+	}
+	Missile {
+		size = 20
+	}
+	Explosion {
+		size = 10
+		duration = 1500
+		smokeParticles = "ExplosionSmokeMedium"
+	}
+	Hud {
+		displayName = "Ki Ball"
+		icon = "skills/energyBall/kiBall.png"
+	}
+}
+
+public "disk" {
+    Charge {
+        	model = "skills/energyDisk/disk.md3"
+        	skin = "skills/energyDisk/yellowDisk.skin"
+        	spin = ( 0 20 0 )
+        	animationRange = [50 100]
+        	size = [0.5 1]
+        	light = ( 0.5 0.5 0 ) [0 1]
+			timedFx = (50 "skills/energyDisk/discCharge.ogg")
+			loopFx = "skills/energyDisk/discLoop.ogg"
+        	tagTo = "tag_weapon"
+    	}
+
+    	Flash {
+        	light = ( 1 1 0 ) 5
+        	soundFx = "skills/energyDisk/discFlash1.ogg"
+    	}
+
+    	Missile {
+        	model = "skills/energyDisk/disk.md3"
+        	skin = "skills/energyDisk/yellowDisk.skin"
+        	spin = ( 0 20 0 )
+        	size = 1
+        	light = ( 1 1 0 ) 5
+        	loopFx = "skills/energyDisk/discLoop.ogg"
+    	}
+
+    	Hud {
+		icon = "skills/energyDisk/diskYellow.png"
+		displayName = "Destructo Disk"
+	}
+}
+public "kiBeam" = "baseAttack" {
+	Charge {
+		size = [0.3 1.0]
+		loopFx = "skills/pulseLoop2.ogg"
+		timedFx = (1 "skills/pingCharge2.ogg")
+	}
+	Flash {
+		model = "skills/energyBeam/beamflash.md3"
+		skin = "skills/energyBeam/beamflashYellow.skin"
+		size = 3
+		light = ( 1 1 0 ) 5
+		soundfx="skills/bigFlash2.ogg"
+		loopFx = "effects/blastFly.ogg"
+	}
+	Missile {
+		model = "skills/energyBeam/beamHeadSprite.md3"
+		skin = "skills/energyBeam/beamHeadSpriteYellow.skin"
+		size = 4
+		spin = ( 0 0 10 )
+		light = ( 1 1 0 ) 5
+	}
+	Struggle {
+		model = "skills/energyBeam/beamstruggle.md3"
+		skin = "skills/energyBeam/beamstruggleYellow.skin"
+	}
+	Explosion {
+		size = 24
+		duration = 2000
+		smokeParticles = "ExplosionSmokeMedium"
+	}
+	Trail {
+		shader = "energyBeamYellow"
+		size = 10
+	}
+	Hud {
+		displayName = "Ki Beam"
+		icon = "skills/energyBeam/kiBeam.png"
+	}
+}
+public "invisibleBlast" {
+	Flash {
+		light = ( 0.85 0.97 0 ) 5
+		soundFx = "skills/quickFlash3.ogg"
+	}
+	Explosion {
+		size = 1
+		light = ( 1 1 1 ) 5
+		soundFx = "effects/explosion/explosion2.ogg"
+		duration = 1000
+		shockwave = "effects/explosion/explosionShockwave.md3" "effects/explosion/explosionShockwave.skin"
+	}
+	Hud {
+		icon = "skills/energyBlast/icon.png"
+		displayName = "Invisible Blast"
+	}
+}

@@ -1,0 +1,371 @@
+SkillsFlashYellow {
+
+	Emitter {
+		type sphere
+		radius 5
+		delay 100
+		count 20
+
+		link auto
+
+		Particle {
+			map "Particles_globYellow"
+			life 200
+			mass 1
+			scale 2
+			rgba ( 1 1 1 1 )
+			outRgba ( 0 0 0 1 ) 150
+		}
+
+		Particle {
+			map "Particles_globYellow"
+			life 220
+			mass 1
+			scale 2
+			rgba ( 1 1 1 1 )
+			outRgba ( 0 0 0 1 ) 160
+		}
+
+	}
+
+	Force {
+		type spherical
+		area sphere 6
+		falloff 0
+		amount 40
+
+		link auto
+	}
+}
+
+SkillsFiringYellow {
+
+	Emitter {
+		type sphere
+		radius 5
+		delay 200
+		period 40
+		count 20
+
+		link auto
+
+		Particle {
+			type spark
+			map "Particles_sparkYellow"
+			life 200
+			mass 1
+			scale 0.7
+			rgba ( 1 1 1 1 )
+			outRgba ( 0 0 0 1 ) 50
+		}
+
+		Particle {
+			type spark
+			map "Particles_sparkYellow"
+			life 220
+			mass 1
+			scale 0.7
+			rgba ( 1 1 1 1 )
+			outRgba ( 0 0 0 1 ) 60
+		}
+
+	}
+
+	Force {
+		type spherical
+		area sphere 55
+		falloff 0
+		amount 30
+
+		link auto
+	}
+}
+
+SkillsChargeYellow {
+
+	Emitter {
+		type sphere
+		radius 50
+		delay 200
+		period 40
+		count 10
+
+		link auto
+
+		Particle {
+			type spark
+			map "Particles_sparkYellow"
+			life 150
+			mass 1
+			scale 0.7
+			rgba ( 1 1 1 1 )
+			inRgba ( 0.25 0.25 0.25 1 ) 50
+		}
+
+		Particle {
+			type spark
+			map "Particles_sparkYellow"
+			life 170
+			mass 1
+			scale 0.7
+			rgba ( 1 1 1 1 )
+			inRgba ( 0.25 0.25 0.25 1 ) 60
+		}
+
+	}
+
+	Force {
+		type spherical
+		area sphere 55
+		falloff 0
+		amount -40
+
+		link auto
+	}
+}
+
+SkillsKamehamehaRay {
+
+	Emitter {
+		type sphere
+		radius 2
+		delay 1000
+		period 40
+		count 10
+
+		link auto
+
+		Particle {
+			type ray
+			map "Particles_rayBlue"
+			life 200
+			mass 1
+			scale 0.4
+			rgba ( 1 1 1 1 )
+			outRgba ( 0 0 0 1 ) 50
+		}
+
+		Particle {
+			type ray
+			map "Particles_rayBlue"
+			life 220
+			mass 1
+			scale 0.4
+			rgba ( 1 1 1 1 )
+			outRgba ( 0 0 0 1 ) 60
+		}
+
+	}
+
+	Force {
+		type spherical
+		area sphere 6
+		falloff 0
+		amount 100
+
+		link auto
+	}
+}
+
+SkillsKamehamehaRayFire {
+
+	Emitter {
+		type sphere
+		radius 2
+		delay 1
+		period 40
+		count 10
+
+		link auto
+
+		Particle {
+			type ray
+			map "Particles_sparkBlue"
+			life 200
+			mass 1
+			scale 5
+			rgba ( 1 1 1 1 )
+			outRgba ( 0 0 0 1 ) 50
+		}
+
+		Particle {
+			type ray
+			map "Particles_sparkBlue"
+			life 220
+			mass 1
+			scale 3
+			rgba ( 1 1 1 1 )
+			outRgba ( 0 0 0 1 ) 60
+		}
+
+	}
+	Force {
+		type spherical
+		area sphere 10
+		falloff 0
+		amount 100
+
+		link auto
+	}
+}
+
+SkillsSpiritBombEnergy {
+
+	Emitter {
+		type sphere
+		radius 500
+		delay 10000
+		period 20
+		count 5
+
+		link auto
+
+		Particle {
+			type ray
+			map "Particles_sparkBlue"
+			life 1000
+			mass 1
+			scale 5
+			rgba ( 1 1 1 1 )
+			inRgba ( 0 0 0 1 ) 250
+			outRgba ( 0 0 0 1 ) 250
+		}
+
+
+	}
+
+	Emitter {
+		type sphere
+		radius 1000
+		delay 10000
+		period 20
+		count 1
+
+		link auto
+
+
+		Particle {
+			map "skills/spiritBombParticles"
+			life 1000
+			mass 1
+			scale 10
+			rgba ( 1 1 1 1 )
+			inRgba ( 0 0 0 1 ) 250
+			outRgba ( 0 0 0 1 ) 250
+		}
+	}
+
+	Emitter {
+		type sphere
+		radius 2000
+		delay 8000
+		period 20
+		count 1
+
+		link auto
+
+		Particle {
+			map "skills/spiritBombParticles"
+			life 1000
+			mass 1
+			scale 20
+			rgba ( 1 1 1 1 )
+			inRgba ( 0 0 0 1 ) 250
+			outRgba ( 0 0 0 1 ) 250
+		}
+
+	}
+
+	Emitter {
+		type sphere
+		radius 4000
+		delay 6000
+		period 10
+		count 1
+
+		link auto
+
+		Particle {
+			map "skills/spiritBombParticles"
+			life 1000
+			mass 1
+			scale 40
+			rgba ( 1 1 1 1 )
+			inRgba ( 0 0 0 1 ) 250
+			outRgba ( 0 0 0 1 ) 250
+		}
+
+	}
+
+	Emitter {
+		type sphere
+		radius 8000
+		delay 4000
+		period 10
+		count 1
+
+		link auto
+
+		Particle {
+			map "skills/spiritBombParticles"
+			life 1000
+			mass 1
+			scale 60
+			rgba ( 1 1 1 1 )
+			inRgba ( 0 0 0 1 ) 250
+			outRgba ( 0 0 0 1 ) 250
+		}
+
+	}
+
+	Emitter {
+		type sphere
+		radius 14000
+		delay 2000
+		period 10
+		count 1
+
+		link auto
+
+		Particle {
+			map "skills/spiritBombParticles"
+			life 1000
+			mass 1
+			scale 75
+			rgba ( 1 1 1 1 )
+			inRgba ( 0 0 0 1 ) 250
+			outRgba ( 0 0 0 1 ) 250
+		}
+
+	}
+
+	Emitter {
+		type sphere
+		radius 28000
+		delay 1000
+		period 10
+		count 1
+
+		link auto
+
+		Particle {
+			map "skills/spiritBombParticles"
+			life 1000
+			mass 1
+			scale 100
+			rgba ( 1 1 1 1 )
+			inRgba ( 0 0 0 1 ) 250
+			outRgba ( 0 0 0 1 ) 250
+		}
+
+	}
+
+	Force {
+		type spherical
+		area sphere 28000
+		falloff 0
+		amount -5
+
+		link auto
+	}
+}

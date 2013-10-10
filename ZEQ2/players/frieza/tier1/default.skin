@@ -1,0 +1,15 @@
+frieza1_head,frieza1Head
+frieza1_headpurple,frieza1Shine
+frieza1_lower,frieza1Lower
+frieza1_lowerpurple,frieza1Shine
+frieza1_upper,frieza1Upper
+frieza1_upperhands,frieza1Upper
+HeadSprite,LODSprite
+UpperSprite,LODSprite
+LowerSprite,LODSprite
+tag_head,
+tag_eyes,
+tag_torso,
+tag_weapon,
+tag_left,
+tag_right,

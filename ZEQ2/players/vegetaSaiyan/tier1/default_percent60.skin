@@ -1,0 +1,11 @@
+Head,vegetaHeadDamaged60
+Eyes,vegetaHeadEyesDamaged60
+Lower,vegetaLegsDamaged60
+Upper,vegetaBodyDamaged60
+Glass,redScouterGlass
+HeadSprite,LODSprite
+LowerSprite,LODSprite
+UpperSprite,LODSprite
+tag_head,
+tag_eyes,
+tag_torso,

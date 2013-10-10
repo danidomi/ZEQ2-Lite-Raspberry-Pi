@@ -1,0 +1,149 @@
+import "baseAttack" = "skills/shared.phys" "baseAttack"
+import "kiBlast" = "skills/shared.phys" "kiBlast"
+import "kiStorm" = "skills/shared.phys" "kiStorm"
+import "kiBall" = "skills/shared.phys" "kiBall"
+import "kiBeam" = "skills/shared.phys" "kiBeam"
+
+private "vegKiStorm" = "kiStorm" {
+	Costs {
+		cooldownTime = 150
+	}
+}
+
+private "kiFlare" {
+	Physics {
+		type = "GroundSkim"
+		speed = 5000
+		radius = 25 +25
+		lifetime = 2500
+	}
+	Costs {
+		powerLevel = 10
+		cooldownTime = 1000
+		chargeTime = 100
+		chargeReadyPct = 10
+	}
+	Detonation {
+		type = "Ki"
+		damage = 900 +0
+		radius = 1500 +0
+	}
+	Muzzle {
+		nrShots = 1
+	}
+	Trajectory {
+		range = 1000
+	}
+}
+
+private "kiFlareTrigger" {
+	Physics {
+		type = "Trigger"
+		range = 10000
+		speed = 0
+		lifetime = 0
+	}
+	Costs {
+		powerLevel = 200
+		cooldownTime = 2000
+		chargeTime = 0
+	}
+	Muzzle {
+		FOV = 90
+	}
+	Trajectory {
+		type = "LineOfSight"
+		range = 10000
+	}
+}
+
+private "gallitGun" = "baseAttack" {
+	Requirement {
+		maxTier = 1
+	}
+	Physics {
+		type = "Beam"
+		speed = 5000
+		radius = 125 +0
+	}
+	Costs {
+		powerLevel = 7
+		chargeReadyPct = 35
+	}
+	Detonation {
+		damage = 1750 +0
+		radius = 3250 +0
+	}
+//	Trajectory {
+//		type = "Guided"
+//	}
+}
+
+private "SuperFinalFlash" = "baseAttack" {
+	Requirement {
+		minTier = 1
+	}
+	Physics {
+		type = "Beam"
+		speed = 7000
+		radius = 125 +0
+	}
+	Costs {
+		powerLevel = 7
+		chargeReadyPct = 60
+		chargeTime = 450
+	}
+	Detonation {
+		damage = 4800 +0
+		radius = 4000 +0
+	}
+  	Restrictions {
+    		movement = 1
+  	} 
+}
+
+private "finalFlash" = "baseAttack" {
+	Requirement {
+		minTier = 1
+	}
+	Physics {
+		type = "Beam"
+		speed = 7000
+		radius = 50 +50
+	}
+	Costs {
+		powerLevel = 10
+		chargeReadyPct = 50
+	}
+	Detonation {
+		damage = 2400 +0
+		radius = 3000 +0
+	}
+//	Trajectory {
+//		type = "Guided"
+//	}
+}
+
+
+private "bigBang" = "baseAttack" {
+	Physics {
+		speed = 7000
+		radius = 125 +0
+	}
+	Costs {
+		powerLevel = 10
+		chargeReadyPct = 35
+	}
+	Detonation {
+		damage = 1500 +0
+		radius = 3000 +0
+	}
+
+}
+
+Weapon 1 = "kiBlast" | "vegKiStorm"
+Weapon 2 = "kiBall" | "kiBeam"
+//Weapon 3 = "kiFlare" | "kiFlareTrigger"
+Weapon 4 = "gallitGun"
+Weapon 5 = "bigBang"
+Weapon 6 = "SuperFinalFlash" | "finalFlash"

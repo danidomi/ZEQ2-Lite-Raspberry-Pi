@@ -1,0 +1,58 @@
+EnergyBlastSmoke {
+	gravity 0.05
+	Emitter {
+		type radiusGround
+		grndDist 48
+		radius 40
+		slide 40
+		count 50
+		jitter 5
+		life 1000
+		Particle {
+			map "celSmokeShader"
+			//model "Effects/Smoke/smoke.skin"
+			life 1000
+			mass 1
+			scale 25
+			rgba ( 1 1 1 1 )
+			outRgba ( 1 1 1 0 ) 2500
+
+		}
+		Particle {
+			map "celSmokeShader2"
+			//model "Effects/Smoke/smoke.skin"
+			life 1000
+			mass 1
+			scale 25
+			rgba ( 1 1 1 1 )
+			outRgba ( 1 1 1 0 ) 2500
+
+		}
+		Particle {
+			map "celSmokeShader3"
+			//model "Effects/Smoke/smoke.skin"
+			life 1000
+			mass 1
+			scale 25
+			rgba ( 1 1 1 1 )
+			outRgba ( 1 1 1 0 ) 2500
+
+		}
+	}
+
+	Force {
+		type spherical
+		area sphere 0
+		falloff 80
+		amount 20
+
+	}
+
+	Force {
+		type drag
+		area infinite
+		amount 0.2
+	}
+
+
+}

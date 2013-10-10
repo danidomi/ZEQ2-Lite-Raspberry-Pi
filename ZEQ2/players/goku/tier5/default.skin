@@ -1,0 +1,17 @@
+hairSS3,gokuHeadSS3
+faceSS3,gokuHeadSS3
+eyesSS3,gokuHeadEyesSS3
+gokuPants,gokuPantsSS3
+gokuBoots,gokuBootsSS3
+gokuShirt,gokuShirtSS3
+gokuLowerAccessories,gokuLowerAccessoriesSS3
+gokuUpperBody,gokuUpperBodySS3
+gokuUnderShirt,gokuUnderShirtSS3
+gokuUpperAccessories,gokuUpperAccessoriesSS3
+HeadSprite,LODSprite
+LowerSprite,LODSprite
+UpperSprite,LODSprite
+tag_head,
+tag_eyes,
+tag_aura0,
+tag_torso,

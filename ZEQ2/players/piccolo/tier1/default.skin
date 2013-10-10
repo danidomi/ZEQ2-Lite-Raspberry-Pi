@@ -1,0 +1,14 @@
+picHead,piccoloHead
+picEyes,piccoloHeadEyes
+picLower,piccoloLegs
+picUpper,piccoloBody
+HeadSprite,LODSprite
+LowerSprite,LODSprite
+UpperSprite,LODSprite
+LowerSprite,LODSprite
+UpperSprite,LODSprite
+tag_head,
+tag_torso,
+tag_head,
+
+

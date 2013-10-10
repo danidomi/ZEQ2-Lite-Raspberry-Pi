@@ -1,0 +1,13 @@
+Head,raditzHeadDamaged60
+Eyes,raditzEyesDamaged60
+Lower,raditzLowerDamaged60
+Upper,raditzUpperDamaged60
+Glass,greenScouterGlass
+HeadSprite,LODSprite
+UpperSprite,LODSprite
+LowerSprite,LODSprite
+tag_head,
+tag_eyes,
+tag_torso,
+
+

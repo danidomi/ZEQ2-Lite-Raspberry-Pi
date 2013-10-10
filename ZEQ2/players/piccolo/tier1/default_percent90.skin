@@ -1,0 +1,11 @@
+pichead,PiccoloHeadDamaged90
+picEyes,PiccoloHeadEyesDamaged90
+picUpper,piccoloBodyDamaged90
+picLower,piccoloLegsDamaged90
+HeadSprite,LODSprite
+LowerSprite,LODSprite
+UpperSprite,LODSprite
+tag_head,
+tag_eyes,
+tag_torso,
+

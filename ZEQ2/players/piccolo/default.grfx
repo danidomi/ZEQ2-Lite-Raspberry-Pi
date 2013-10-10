@@ -1,0 +1,162 @@
+import "baseAttack" = "skills/shared.grfx" "baseAttack"
+import "kiBlast" = "skills/shared.grfx" "kiBlast"
+import "kiStorm" = "skills/shared.grfx" "kiStorm"
+import "kiBall" = "skills/shared.grfx" "kiBall"
+import "kiBeam" = "skills/shared.grfx" "kiBeam"
+
+private "scatterShot" = "kiStorm" {
+	Missile {
+		size = 5
+		loopFx = ""
+	}
+	Hud {
+		displayName = "Scatter Shot"
+		icon = "skills/scatterShot/icon.png"
+	}
+}
+
+private "scatterShotGuide" {
+	Hud {
+		displayName = "Scatter Shot Guide"
+		icon = "skills/scatterShot/icon.png"
+	}
+}
+
+private "superKiBall" = "baseAttack"  {
+	Charge {
+		shader = "energyBallYellow"
+		size = [0 1.5] 
+		light = ( 1 1 1 ) [0 5]
+		loopFx = "skills/pulseLoop1.ogg"
+		timedFx = (
+			2 "skills/energyBeam/beamcharge.ogg"
+			12 "skills/energyBeam/beamCharge.ogg"
+		)
+	}
+	Flash {
+		light = ( 1 1 1 ) 20
+		model = "skills/energyBeam/beamflash.md3"
+		skin = "skills/energyBeam/beamflashYellow.skin"
+		size = 3
+		soundFx = "skills/bigFlash1.ogg"
+		voicefx = "skills/energyBall/SuperKiBall.ogg"
+		loopParticles = "EnergyBlastSmoke"
+		
+	}
+	Missile {
+		shader = "energyBallYellow"
+		size = 20
+		light = ( 1 1 1 ) 20
+	}
+	Explosion {
+		skin = "effects/explosion/explosionYellow.skin"
+		size = 64
+		light = ( 1 1 1 ) 50
+		duration = 4000
+		smokeParticles = "ExplosionSmokeLarge"
+	}
+	Hud {
+		displayName = "Super Ki Ball"
+		icon = "skills/energyCannon/icon.png"
+	}
+}
+
+private "masenko" = "baseAttack" {
+	Charge {
+		shader = "energyBallYellow"
+		size = [0 3] 
+		light = ( 1 1 0 ) [0 5]
+		loopFx = "skills/pulseLoop5.ogg"
+		timedFx = (2 "skills/masenko/masenkoStart.ogg")
+		timedFx = (4 "skills/masenko/masenkoStart.ogg")
+		loopParticles = "AuraDebris"
+	}
+	Flash {
+		model = "skills/energyBeam/beamflash.md3"
+		skin = "skills/energyBeam/beamflashYellow.skin"
+		size = 3
+		light = ( 1 1 0 ) 20
+		soundFx = "skills/masenko/masenkoEnd.ogg"
+		loopFx = "skills/pulseLoop4.ogg"
+	}
+	Missile {
+		model = "skills/energyBeam/beamHeadSprite.md3"
+		skin = "skills/energyBeam/beamHeadSpriteYellow.skin"
+		size = 3
+		spin = ( 0 0 0 )
+		light = ( 1 1 0 ) 20
+	}
+	Struggle {
+		model = "skills/energyBeam/beamstruggle.md3"
+		skin = "skills/energyBeam/beamstruggleYellow.skin"
+	}
+	Explosion {
+		skin = "effects/explosion/explosionYellow.skin"
+		size = 64
+		light = ( 1 1 0 ) 50
+		duration = 4000
+		smokeParticles = "ExplosionSmokeLarge"
+	}
+	Trail {
+		shader = "beams/beamYellow"
+		size = 15
+	}
+	Hud {
+		displayName = "Masenko"
+		icon = "skills/energyPowerBeam/icon.png"
+	}
+}
+
+private "specialBeamCannon" = "baseAttack" {
+	Charge {
+		shader = "specialBeamCannonFlash"
+		size = [0 3.0] 
+		light = ( 1 1 0 ) [0 0]
+		loopFx = "skills/specialBeamCannon/specialBeamCannonCharge.ogg"
+		timedFx = (2 "skills/specialBeamCannon/specialBeamCannonStart.ogg")
+				loopParticles = "AuraDebris"
+	}
+	Flash {
+		shader = "specialBeamCannonFlash"
+		size = 10
+		light = ( 1 1 0 ) 10
+		soundFx = "skills/specialBeamCannon/specialBeamCannonFire.ogg"
+		loopFx = "skills/energyBeam/beamFiring.ogg"
+		loopFx = "effects/blastFly2.ogg"
+	}
+	Missile {
+		shader = "specialBeamCannonFlash"
+		size = 3
+		spin = ( 0 0 0 )
+		light = ( 1 1 0 ) 10
+	}
+	Explosion {
+		skin = "effects/explosion/explosionYellow.skin"
+		size = 5
+		light = ( 1 1 0 ) 10
+		duration = 500
+		smokeParticles = "ExplosionSmokeSmall"
+	}
+	Struggle {
+		model = "skills/energyBeam/beamstruggle.md3"
+		skin = "skills/energyBeam/beamstrugglePurple.skin"
+	}
+	Trail {
+		shader = "specialBeamCannonBeam"
+		size = 10
+		spiralShader = "specialBeamCannonBeamSwirl"
+		spiralSize = 10
+		spiralOffset = 10
+	}
+	Hud {
+		displayName = "Special Beam Cannon"
+		icon = "skills/specialBeamCannon/icon.png"
+	}
+}
+
+Weapon 1 = "kiBlast" | "kiStorm"
+Weapon 2 = "kiBall" | "kiBeam"
+Weapon 3 = "scatterShot" | "scatterShotGuide"
+Weapon 4 = "superKiBall"
+Weapon 5 = "masenko"
+Weapon 6 = "specialBeamCannon"

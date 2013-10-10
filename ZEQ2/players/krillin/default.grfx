@@ -1,0 +1,101 @@
+import "baseAttack" = "skills/shared.grfx" "baseAttack"
+import "kiBlast" = "skills/shared.grfx" "kiBlast"
+import "kiStorm" = "skills/shared.grfx" "kiStorm"
+import "kiBall" = "skills/shared.grfx" "kiBall"
+import "kiBeam" = "skills/shared.grfx" "kiBeam"
+import "disk" = "skills/shared.grfx" "disk"
+
+private "solarFlare" {
+	Charge {
+		tagTo = "tag_head"
+		light = ( 1 1 1 ) [0 1]
+	}
+	Flash {
+		light = ( 1 1 1 ) 50
+		soundFx = "skills/energyBlast/energyBlast.ogg"
+	}
+	Explosion {
+		shader = "solarFlare"
+		light = ( 1 1 1 ) 50
+		size = 100
+		duration = 5000
+		soundFx = "skills/solarFlare/solarFlare.ogg"
+		noRockDebris = 1
+	}
+	Hud {
+		displayName = "Solar Flare"
+		icon = "skills/solarFlare/icon.png"
+	}
+}
+
+private "kameHameHa" = "baseAttack" {
+	Charge {
+		shader = "energyBallBlue"
+		size = [0 1] 
+		light = ( 0.25 0.5 1 ) [0 0.5]
+		timedFx = ( 4 "skills/kamehameha/kamehamehaReady.ogg" 
+			    10 "skills/kamehameha/krillinKamehamehaStart.ogg")
+		loopFx = "skills/kamehameha/kamehamehaChargeLoop.ogg"
+		loopParticles = "AuraDebris"
+		loopParticles = "SkillsKamehamehaRay"
+	}
+	Flash {
+		model = "skills/energyBeam/beamHead2.md3"
+		skin = "skills/energyBeam/beamHead1.skin"
+		size = 2
+		light = ( 0.25 0.5 1 ) 10
+		loopParticles = "SkillsKamehamehaRayFire"
+		particles = "EnergyBlastSmoke"
+		//soundFx = "skills/kamehameha/kameHameHa.ogg"
+		//soundFx = "skills/kamehameha/krillinKamehamehaEnd.ogg"
+		soundFx = "skills/kamehameha/krillinKamehamehaEnd.ogg"
+		loopFx = "skills/kamehameha/kamehamehaFiring.ogg"
+	}
+	Missile {
+		particles = "SkillsKamehamehaRayFire"
+		model = "skills/energyBeam/beamHead1.md3"
+		skin = "skills/energyBeam/beamHead1.skin"
+		size = 10
+		//spin = ( 0 0 10 )
+		light = ( 0.25 0.5 1 ) 20
+	}
+	Struggle {
+		model = "skills/energyBeam/beamstruggle.md3"
+		skin = "skills/energyBeam/beamstruggleBlue.skin"
+	}
+	Explosion {
+		skin = "effects/explosion/explosionBlue.skin"
+		size = 96
+		light = ( 0.25 0.5 1 ) 50
+		duration = 4000
+		smokeParticles = "ExplosionSmokeLarge"
+	}
+	Trail {
+		shader = "energyBeamBlue"
+		size = 30
+	}
+	Hud {
+		displayName = "KameHameHa"
+		icon = "skills/kamehameha/icon.png"
+	}
+}
+
+private "scatterBeamStorm" = "kiBeam"{
+	Hud {
+		displayName = "Scattering Beam Storm"
+		icon = "skills/finalFlash/icon.png"
+	}
+}
+
+private "rapidDisk" = "disk"{
+	Hud {
+		displayName = "Rapid Destructo Disk"
+	}
+}
+
+Weapon 1 = "kiBlast" | "kiStorm"
+Weapon 2 = "kiBall" | "kiBeam"
+Weapon 3 = "scatterBeamStorm"
+Weapon 4 = "kamehameha"
+Weapon 5 = "disk" | "rapidDisk"
+weapon 6 = "solarFlare"

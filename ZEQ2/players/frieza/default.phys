@@ -1,0 +1,120 @@
+import "baseAttack" = "skills/shared.phys" "baseAttack"
+import "invisibleBlast" = "skills/shared.phys" "invisibleblast"
+import "disk" = "skills/shared.phys" "disk"
+import "kiBlast" = "skills/shared.phys" "kiBlast"
+import "kiStorm" = "skills/shared.phys" "kiStorm"
+import "kiBall" = "skills/shared.phys" "kiBall"
+import "kiBeam" = "skills/shared.phys" "kiBeam"
+
+private "deathBeam" {
+	Physics {
+		type = "Beam"
+		speed = 20000
+		radius = 1
+		lifetime = 12000
+		drain = 1
+	}
+	Costs {
+		powerLevel = 8
+		chargeTime = 0
+		chargeReadyPct = 0
+		coolDownTime = 1500
+	}
+	Detonation {
+		type = "Pierce"
+		damage = 500 +0
+		radius = 200
+		duration = 1000
+	}
+	Muzzle {
+		nrShots = 1
+	}
+	Trajectory {
+		type = "LineOfSight"
+	}
+
+}
+
+private "deathWave" {
+	Physics {
+		type = "GroundSkim"
+		speed = 5000
+		radius = 20 +20
+		lifetime = 10000
+		drain = 1
+	}
+	Costs {
+		powerLevel = 6
+		cooldownTime = 1000
+		chargeTime = 100
+		chargeReadyPct = 50
+	}
+	Detonation {
+		type = "Ki"
+		damage = 600 +0
+		radius = 200 +0
+	}
+	Muzzle {
+		nrShots = 1
+	}
+	Trajectory {
+		type = "LineOfSight"
+	}
+}
+
+private "superNova" = "baseAttack" {
+	Physics {
+		speed = 2500
+		radius = 100 +100
+	}
+	Costs {
+		powerLevel = 10
+		chargeTime = 400
+		cooldownTime = 1500
+		chargeReadyPct = 55
+	}
+	Detonation {
+		damage = 4000 +0
+		radius = 25000 +0
+	}
+	Muzzle {
+		offsetHeight = 150
+	}
+}
+
+private "deathBall" = "baseAttack" {
+	Physics {
+		speed = 2500
+		radius = 100 +100
+	}
+	Costs {
+		powerLevel = 10
+		chargeTime = 400
+		cooldownTime = 1500
+		chargeReadyPct = 55
+	}
+	Detonation {
+		damage = 4000 +0
+		radius = 25000 +0
+	}
+	Muzzle {
+		offsetHeight = 150
+	}
+}
+
+private "guidedDisk" = "disk" {
+	Physics {
+		lifetime = 60000
+		speed = 1000
+	}
+	Trajectory {
+		type = "Guided"
+	}
+}
+
+Weapon 1 = "kiBlast" | "kiStorm"
+Weapon 2 = "kiBall" | "kiBeam"
+Weapon 3 = "deathBeam" | "invisibleBlast"
+Weapon 4 = "deathWave"
+Weapon 5 = "superNova" | "deathBall"
+weapon 6 = "guidedDisk"

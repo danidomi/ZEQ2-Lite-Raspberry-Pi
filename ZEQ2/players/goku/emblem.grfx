@@ -1,0 +1,169 @@
+import "baseAttack" = "skills/shared.grfx" "baseAttack"
+import "kiBlast" = "skills/shared.grfx" "kiBlast"
+import "kiStorm" = "skills/shared.grfx" "kiStorm"
+import "kiBall" = "skills/shared.grfx" "kiBall"
+import "kiBeam" = "skills/shared.grfx" "kiBeam"
+
+private "solarFlare" {
+	Charge {
+		tagTo = "tag_head"
+		light = ( 1 1 1 ) [0 1]
+	}
+	Flash {
+		light = ( 1 1 1 ) 50
+		soundFx = "skills/energyBlast/energyBlast.ogg"
+	}
+	Explosion {
+		shader = "solarFlare"
+		light = ( 1 1 1 ) 50
+		size = 100
+		duration = 5000
+		soundFx = "skills/solarFlare/solarFlare.ogg"
+		noRockDebris = 1
+	}
+	Hud {
+		displayName = "Solar Flare"
+		icon = "skills/solarFlare/icon.png"
+	}
+}
+
+private "kameHameHa" = "baseAttack" {
+	Charge {
+		shader = "energyBallBlue"
+		size = [0 1] 
+		light = ( 0.25 0.5 1 ) [0 0.5]
+		timedFx = ( 4 "skills/kamehameha/kamehamehaReady.ogg" 
+			    10 "skills/kamehameha/gokuKamehamehaAngryStart.ogg")
+		loopFx = "skills/kamehameha/kamehamehaChargeLoop.ogg"
+		loopParticles = "AuraDebris"
+		loopParticles = "SkillsKamehamehaRay"
+	}
+	Flash {
+		model = "skills/energyBeam/beamHead2.md3"
+		skin = "skills/energyBeam/beamHead1.skin"
+		size = 2
+		light = ( 0.25 0.5 1 ) 10
+		loopParticles = "SkillsKamehamehaRayFire"
+		particles = "EnergyBlastSmoke"
+		//soundFx = "skills/kamehameha/kameHameHa.ogg"
+		//soundFx = "skills/kamehameha/gokuKameHameHaEnd.ogg"
+		soundFx = "skills/kamehameha/gokuKamehamehaAngryEnd.ogg"
+		loopFx = "skills/kamehameha/kamehamehaFiring.ogg"
+	}
+	Missile {
+		particles = "SkillsKamehamehaRayFire"
+		model = "skills/energyBeam/beamHead1.md3"
+		skin = "skills/energyBeam/beamHead1.skin"
+		size = 10
+		//spin = ( 0 0 10 )
+		light = ( 0.25 0.5 1 ) 20
+	}
+	Struggle {
+		model = "skills/energyBeam/beamstruggle.md3"
+		skin = "skills/energyBeam/beamstruggleBlue.skin"
+	}
+	Explosion {
+		skin = "effects/explosion/explosionBlue.skin"
+		size = 140
+		light = ( 0.25 0.5 1 ) 50
+		duration = 4000
+		smokeParticles = "ExplosionSmokeLarge"
+	}
+	Trail {
+		shader = "energyBeamBlue"
+		size = 30
+	}
+	Hud {
+		displayName = "KameHameHa"
+		icon = "skills/kamehameha/icon.png"
+	}
+}
+
+private "energyBlast" {
+	Charge {
+		tagTo = "tag_head"
+	}
+	Flash {
+		light = ( 1 1 1 ) 5
+		soundFx = "skills/energyBlast/energyBlast.ogg"
+	}
+	Explosion {
+		shader = "shockwave"
+		light = ( 1 1 1 ) 5
+		size = 20
+		duration = 100
+		soundFx = "effects/contact.ogg"
+		smokeParticles = "EnergyBlastSmoke"
+	}
+	Hud {
+		displayName = "Energy Blast"
+		icon = "skills/energyBlast/icon.png"
+	}
+}
+
+private "energyBlastConstant" {
+	Charge {
+		tagTo = "tag_weapon"
+	}
+	Flash {
+		light = ( 1 1 1 ) 5
+		//soundFx = "sound/skills/energyBlast/energyBlast.ogg"
+	}
+	Explosion {
+		shader = "skills/energyBlast"
+		light = ( 1 1 1 ) 5
+		size = 10
+		duration = 100
+		soundFx = "effects/contact.ogg"
+	}
+	Hud {
+		displayName = "Energy Blast Force"
+		icon = "skills/energyBlast/icon.png"
+	}
+}
+
+private "spiritBomb" = "baseAttack"  {
+	Charge {
+		model = "skills/spiritBomb/spiritBomb.md3"
+		skin = "skills/spiritBomb/spiritBomb.skin"
+		loopParticles = "SkillsSpiritBombEnergy"
+		animationRange = [25 100]
+		size = [0.01 50.0]
+		light = ( 0.25 0.5 1 ) [0 20]
+		loopFx = "skills/pulseLoop1.ogg"
+		timedFx = (
+			 1 "skills/spiritBomb/SpiritBombBeginNew.ogg"
+			50 "skills/spiritBomb/SpiritBombNew.ogg"
+			80 "skills/spiritBomb/spiritBombChargeFinished.ogg"
+		)
+	}
+	Flash {
+		light = ( 0.25 0.5 1 ) 20
+		soundFx = "skills/bigFlash1.ogg"
+	}
+	Missile {
+		model = "skills/spiritBomb/spiritBomb.md3"
+		skin = "skills/spiritBomb/spiritBomb.skin"
+		size = 1
+		light = ( 0.25 0.5 1 ) 20
+	}
+	Explosion {
+		model = "effects/explosion/HPE.md3"
+		skin = "effects/explosion/HPExplosionBlue.skin"
+		size = 367
+		light = ( 0.25 0.5 1 ) 300
+		duration = 15000
+		//smokeParticles = "ExplosionSmokeLarge"
+	}
+	Hud {
+		displayName = "Spirit Bomb"
+		icon = "skills/spiritBomb/icon.png"
+	}
+}
+
+Weapon 1 = "kiBlast" | "kiStorm"
+Weapon 2 = "kiBall" | "kiBeam"
+Weapon 3 = "energyBlast" | "energyBlastConstant"
+Weapon 4 = "kamehameha" 
+Weapon 5 = "spiritBomb"
+weapon 6 = "solarFlare"
